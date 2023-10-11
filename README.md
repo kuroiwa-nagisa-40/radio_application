@@ -57,6 +57,3 @@ TwitterなどのSNSと比較し、感想の投稿だけでなく、自身のマ�
 
 ### 画面遷移図(figma)
 https://www.figma.com/file/9wAk71gxkV2eqbNI2EjWMj/Untitled?type=design&node-id=12%3A667&mode=design&t=KPkyVP7d0mEoJX8E-1
-
-### ER図
-https://app.diagrams.net/#G140qISBSfQmuXz61R4GHPVNHMijX6SHfO
