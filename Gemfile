@@ -48,6 +48,8 @@ gem 'bootstrap', '~> 5.0.2'
 #jquery
 gem 'jquery-rails'
 
+# nokogiri
+gem 'nokogiri'
 
 
 # Use Sass to process CSS
