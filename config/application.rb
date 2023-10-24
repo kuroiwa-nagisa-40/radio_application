@@ -15,8 +15,10 @@ module Radiown
       g.assets false
       g.helper false
       g.test_flamework false
-
     end
+    
+    config.time_zone = "Tokyo"
+    config.active_record.default_timezone = :local
 
     # Configuration for the application, engines, and railties goes here.
     #
