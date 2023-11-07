@@ -1,19 +1,30 @@
-<div class="container">
-<h1>Programs#index</h1>
-<p>Find me in app/views/programs/index.html.erb</p>
+<div class="container py-2">
+  <% current_date = Date.today %> <!-- 現在の日付を取得 -->
+  <div class="date-buttons">
+    <% (@selected_date.beginning_of_week..@selected_date.beginning_of_week + 6.days).each do |date| %>
+      <%= link_to date.strftime("%m/%d"), programs_path(date: date), class: "btn #{date == @selected_date ? 'btn-primary active' : 'btn-default'}" %>
+    <% end %>
+  </div>
 
-<!-- Example single danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Action
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
-  </ul>
+  <!--番組表（スクロール)-->
+  <div class="overflow-auto bg-light" style="height: 700px">
+    <div class="d-flex">
+      <!--時間軸-->
+      <div class="col-1 m-2 text-white bg-dark" style="flex: 0 0 50px; position: sticky; left: 0;  z-index: 3">
+        <!--スクロールの軸-->
+        <div class="border bg-dark" style="height: 60px; position: sticky; top: 0; z-index: 3"></div>
+        <!-- 時間軸コンテンツ (ここに時間帯などを表示) -->
+        <% (0..23).each do |hour| %>
+          <div class="border p-2" style="height: 120px"><%= sprintf('%02d', hour + 5) + ":00" %></div>
+        <% end %>
+      </div>
+
+      <!--番組カラム-->
+      <% @stations.each do |station| %>
+        <%= render partial: 'program_table', locals: { station: station, programs: @programs.where(station_id: station.id) } %>
+      <% end %>
+    </div>
+  </div>
 </div>
-</div>
+
 

@@ -51,6 +51,11 @@ gem 'jquery-rails'
 # nokogiri
 gem 'nokogiri'
 
+gem 'parallel'
+gem 'activerecord-import'
+
+gem "whenever", require: false
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"

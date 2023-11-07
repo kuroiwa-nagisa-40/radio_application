@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'programs/index'
+  root 'programs#index'
+  resources :programs
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

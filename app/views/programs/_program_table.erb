@@ -1,0 +1,20 @@
+<div class="col-md-2 col-sm-12 m-2">
+  <!--番組ヘッダー-->
+  <div class="border bg-light" style="height: 60px; position: sticky; top: 0; z-index: 1">
+    <div class="card-body">
+      <h6 class="card-title"><%= station.name %></h6>
+    </div>
+  </div>
+  <!--番組タイトルー-->
+  <% programs.each do |program| %>
+    <% truncated_title = program.title.length > 6 ? program.title[0..5] + '...' : program.title %>
+		<div class="card" style="height: <%= program.time / 60 * 2 %>px;" >
+			<div class="card-body">
+			<h6 class="card-title">
+        <span class="truncate-text" style="text-overflow: ellipsis;"><%= truncated_title %></span>
+      </h6>
+      <P><%= program.start_datetime %>〜<%= program.end_datetime %></p>
+		  </div>
+    </div>
+	<% end %>
+</div>
