@@ -55,6 +55,8 @@ gem 'parallel'
 gem 'activerecord-import'
 
 gem "whenever", require: false
+gem "enum_help"
+gem 'rails-i18n'
 
 
 # Use Sass to process CSS

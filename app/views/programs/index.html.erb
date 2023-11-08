@@ -1,4 +1,4 @@
-<div class="container py-2">
+<div class="container-fluid py-2">
   <% current_date = Date.today %> <!-- 現在の日付を取得 -->
   <div class="date-buttons">
     <% (@selected_date.beginning_of_week..@selected_date.beginning_of_week + 6.days).each do |date| %>

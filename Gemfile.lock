@@ -98,6 +98,8 @@ GEM
       reline (>= 0.3.1)
     dockerfile-rails (1.5.10)
       rails (>= 3.0.0)
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.12.0)
     execjs (2.9.1)
     ffi (1.16.3)
@@ -182,6 +184,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails-i18n (7.0.8)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.8)
       actionpack (= 7.0.8)
       activesupport (= 7.0.8)
@@ -264,6 +269,7 @@ DEPENDENCIES
   capybara
   debug
   dockerfile-rails (>= 1.5)
+  enum_help
   importmap-rails
   jbuilder
   jquery-rails
@@ -272,6 +278,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
+  rails-i18n
   selenium-webdriver
   sentry-rails (~> 5.12)
   sentry-ruby (~> 5.12)
