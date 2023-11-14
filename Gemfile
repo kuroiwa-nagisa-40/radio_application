@@ -57,6 +57,7 @@ gem 'activerecord-import'
 gem "whenever", require: false
 gem "enum_help"
 gem 'rails-i18n'
+gem 'byebug'
 
 
 # Use Sass to process CSS

@@ -94,6 +94,6 @@ namespace :get_programs do
     end
 
     # バルクインサートで週間番組データをProgramテーブルに登録
-    Program.import weekly_program_data, on_duplicate_key_update: %i[title start_datetime]
+    Program.import weekly_program_data, on_duplicate_key_update: %i[title start_datetime station_id]
   end
 end

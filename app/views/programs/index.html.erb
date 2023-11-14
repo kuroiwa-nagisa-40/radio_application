@@ -22,6 +22,7 @@
       <!--番組カラム-->
       <% @stations.each do |station| %>
         <%= render partial: 'program_table', locals: { station: station, programs: @programs.where(station_id: station.id) } %>
+        
       <% end %>
     </div>
   </div>
