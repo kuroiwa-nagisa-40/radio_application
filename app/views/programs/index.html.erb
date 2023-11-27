@@ -1,8 +1,8 @@
 <div class="container-fluid py-2">
   <% current_date = Date.today %> <!-- 現在の日付を取得 -->
-  <div class="date-buttons">
+  <div class="date-buttons mb-4">
     <% (@selected_date.beginning_of_week..@selected_date.beginning_of_week + 6.days).each do |date| %>
-      <%= link_to date.strftime("%m/%d"), programs_path(date: date), class: "btn #{date == @selected_date ? 'btn-primary active' : 'btn-default'}" %>
+      <%= link_to I18n.l(date, format: :short), programs_path(date: date), class: "btn #{date == @selected_date ? 'btn-secondary active' : 'btn-default'}" %>
     <% end %>
   </div>
 
@@ -10,12 +10,12 @@
   <div class="overflow-auto bg-light" style="height: 700px">
     <div class="d-flex">
       <!--時間軸-->
-      <div class="col-1 m-2 text-white bg-dark" style="flex: 0 0 50px; position: sticky; left: 0;  z-index: 3">
+      <div class="col-1 text-white bg-dark" style="flex: 0 0 50px; position: sticky; left: 0;  z-index: 3">
         <!--スクロールの軸-->
-        <div class="border bg-dark" style="height: 60px; position: sticky; top: 0; z-index: 3"></div>
+        <div class="border bg-dark" style="height: 40px; position: sticky; top: 0; z-index: 3"></div>
         <!-- 時間軸コンテンツ (ここに時間帯などを表示) -->
         <% (0..23).each do |hour| %>
-          <div class="border p-2" style="height: 120px"><%= sprintf('%02d', hour + 5) + ":00" %></div>
+          <div class="border p-2" style="height: 240px"><%= sprintf('%02d', hour + 5) + ":00" %></div>
         <% end %>
       </div>
 

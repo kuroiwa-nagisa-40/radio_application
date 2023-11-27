@@ -8,4 +8,8 @@ class ProgramsController < ApplicationController
     @end_time = @start_time + 1.day #11/10 5:00
     @programs = Program.includes(:station).where(start_datetime: @start_time...@end_time).order(start_datetime: :asc)
   end
+
+  def show
+    
+  end
 end

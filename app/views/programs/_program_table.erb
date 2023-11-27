@@ -1,20 +1,19 @@
-<div class="col-md-2 col-sm-12 m-2" style="width: 140px">
+<div class="col-md-2 col-sm-12" style="width: 150px">
   <!--番組ヘッダー-->
-  <div class="border bg-light" style="height: 60px; position: sticky; top: 0; z-index: 1">
-    <div class="card-body">
-      <h6 class="card-title"><%= station.name %></h6>
-    </div>
+  <div class="border p-2 bg-secondary d-flex align-items-center overflow-hidden" style="height: 40px; position: sticky; top: 0; z-index: 1">
+      <span class="text-left text-nowrap text-white"><%= station.name %></span>
   </div>
   <!--番組タイトルー-->
   <% programs.each do |program| %>
-    <% truncated_title = program.title.length > 15 ? program.title[0..5] + '...' : program.title %>
-		<div class="card" style="height: <%= program.time / 60 * 2 %>px;" >
-			<div class="card-body">
-			<h6 class="card-title">
-        <span class="truncate-text" style="text-overflow: ellipsis;"><%= truncated_title %></span>
-      </h6>
-      <P><%= I18n.l(program.start_datetime, format: :time) %>〜<%= I18n.l(program.end_datetime, format: :time) %></p>
-		  </div>
-    </div>
-	<% end %>
+		<div class="border d-flex" data-controller="programs" style="height: <%= [program.time / 60 * 4, 50].max %>px;" >
+			<div class="position-relative" style="width:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<%= program.title %>">
+        <span class="bg-time position-absolute top-0 start-0 text-white"><%= program.start_datetime.strftime('%M') %></span>
+      </div>
+      <div class="btn text-start texr-wrap text-dark fw-medium overflow-hidden" style="width:140px;" data-programs-target="title">
+        <%= link_to program_path(program) do %>
+	        <p><%= program.title %></p>
+        <% end %>
+      </div>
+		</div>
+  <% end %>
 </div>
