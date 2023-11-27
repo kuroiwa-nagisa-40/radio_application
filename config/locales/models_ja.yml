@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      station: 放送局
+      program: 番組情報 
+    attributes:
+      station:
+        station_id: 放送局ID
+        name: 放送局名
+      program:
+        title: 番組名
+        start_datetime: 放送開始日時
+        end_datetime: 放送終了日時
+        url: 番組URL
+        performer: 出演者
+        email: 番組メールアドレス
+        time: 放送時間
