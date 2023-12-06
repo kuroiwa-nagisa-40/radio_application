@@ -22,6 +22,11 @@ RUN gem update --system --no-document && \
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
+# Install Yarn
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl postgresql-client nodejs yarn && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 # Install packages needed to build gems
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential libpq-dev
@@ -47,7 +52,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl postgresql-client && \
+    apt-get install --no-install-recommends -y curl postgresql-client nodejs && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application

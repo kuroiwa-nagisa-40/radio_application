@@ -20,3 +20,11 @@ console_command = "/rails/bin/rails console"
 [[statics]]
   guest_path = "/rails/public"
   url_prefix = "/"
+
+[[deploy.targets]]
+  name = "Run get_station rake task"
+  script = ["bundle", "exec", "rake", "get_programs:get_station"]
+
+[[deploy.targets]]
+  name = "Run get_weekly_programs rake task"
+  script = ["bundle", "exec", "rake", "get_programs:get_weekly_programs"]
