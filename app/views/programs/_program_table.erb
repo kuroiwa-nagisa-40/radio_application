@@ -9,11 +9,11 @@
 			<div class="position-relative" style="width:10px;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<%= program.title %>">
         <span class="bg-time position-absolute top-0 start-0 text-white"><%= program.start_datetime.strftime('%M') %></span>
       </div>
-      <div class="btn text-start texr-wrap text-dark fw-medium overflow-hidden" style="width:140px;" data-programs-target="title">
-        <%= link_to program_path(program) do %>
-	        <p><%= program.title %></p>
-        <% end %>
-      </div>
+      <%= link_to program_path(program) do %>
+        <div class="btn text-start texr-wrap text-dark fw-medium overflow-hidden" style="width:140px;" data-programs-target="title">
+          <p><%= program.title %></p>
+        </div>
+      <% end %>
 		</div>
   <% end %>
 </div>
