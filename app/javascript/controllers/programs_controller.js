@@ -28,7 +28,7 @@ export default class extends Controller {
 
   truncateTitle() {
     const originalTitle = this.titleTarget.textContent.trim();
-    const maxHeight = 60; // 最大の高さ（ピクセル単位）を設定
+    const maxHeight = 70; // 最大の高さ（ピクセル単位）を設定
     
     // 高さが100px以下の場合、最初の5文字を表示し、残りは"..."で省略
     if (this.element.clientHeight < maxHeight) {
